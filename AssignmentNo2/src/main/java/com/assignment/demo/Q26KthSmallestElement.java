@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 public class Q26KthSmallestElement {
 
 	//Kth smallest element
-		public static int kthSmallest(int arr[],int start,int end,int k) {
+		public static int kthSmallest(int arr[],int end,int k) {
 			PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 			
 			Arrays.sort(arr);

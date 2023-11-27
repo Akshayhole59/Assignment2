@@ -8,7 +8,7 @@ public class Q05FibonacciSeriesNth {
 			if (n == 1) {
 				System.out.println(carryNumber1);
 			} else {
-				for (int i = 2; i < n; i++) {
+				for (int i = 2; i <= n; i++) {
 					sum = carryNumber1 + carrynumber2;
 
 					carryNumber1 = carrynumber2;

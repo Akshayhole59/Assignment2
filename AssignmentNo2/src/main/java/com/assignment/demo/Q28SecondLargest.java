@@ -1,33 +1,15 @@
 package com.assignment.demo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Arrays;
 
 public class Q28SecondLargest {
 
 	//Second Largest
-		public static int print2largest(int arr[],int n) {
-			Set<Integer> set= new HashSet<>();
-			ArrayList<Integer> al = new ArrayList<>();
-			for(int i : arr) {
-				set.add(i);
-			}
-			System.out.println(set);
-			al.addAll(set);
-			Collections.sort(al, Collections.reverseOrder());
+		public static int print2largest(Integer arr[],int n) {
 			
-			if(al.size()<n) {
-				return -1;
-			}
-			System.out.println(al);
-			for(int i=0;i<al.size();i++)
-			{
-				if(i==n-1) {
-			     return al.get(i);
-				}
-			}
-			return -1;
+			
+			return Arrays.asList(arr).stream().sorted((a,b)->a<b?1:a>b?-1:0).skip(n-1).findFirst().get();
+			
+
 		}
 }

@@ -6,19 +6,22 @@ import java.util.OptionalInt;
 
 public class Q10MaxAreaRectangle {
 
-	//Maximum Area Rectangle
-		public static OptionalInt  calculate_Area(int n, int arr[][]) {
-			int j=0;
-			
-			List<Integer> list = new ArrayList<>();
-			for(int i=0;i<n;i++) {
-				int result = arr[i][j]*arr[i][j+1];
-				list.add(result);
-			}
-			
-			OptionalInt newResult =  list.stream().mapToInt(v -> v).max();
-				     
-				return newResult;
+	
+		public static int  calculate_Area(int n, int arr[][]) {
+			int max_Area = Integer.MIN_VALUE; 
+			 
+	        for (int i = 0; i<arr.length; i++){
+	        	 int temp_area = 1;
+	            for (int j = 0; j<arr[i].length; j++){
+	            	 temp_area = temp_area * arr[i][j];  
+	            } 
+	            
+	            
+	            if (temp_area > max_Area) { 
+	                max_Area = temp_area; 
+	            }
+	       }
+	        return max_Area; 
 			
 		}
 }
